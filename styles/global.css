@@ -1,3 +1,12 @@
+/* Remove margens e paddings padrões de todos os elementos,
+  e ajusta o box-sizing para que larguras e alturas incluam bordas e paddings.
+  Isso facilita o controle do layout e evita "quebras" inesperadas. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --font-family: 'Poppins', sans-serif;
   --text: 400 1rem/1.5 var(--font-family);
@@ -14,4 +23,9 @@
   --stroke-default: #D6D3D1;
   --stroke-highlight: #F3541C;
   --semantic-error: #DC2626;
+}
+/* Impede que o conteúdo do body ultrapasse a área visível da tela,
+  desativando barras de rolagem horizontal e vertical. */
+body {
+  overflow: hidden;
 }
