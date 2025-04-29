@@ -19,6 +19,8 @@
 
   --surface-primary: #ffffff;
   --surface-secondary: #fee7d6;
+  --surface-disabled: #e7e5e4;
+
 
   --stroke-default: #d6d3d1;
   --stroke-highlight: #f3541c;
@@ -41,4 +43,18 @@ h2 {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem; /* Espaço entre os campos */
+  margin-top: 1rem; /* Espaço vertical entre linhas de inputs */
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.flex-2 {
+  flex: 2
 }
