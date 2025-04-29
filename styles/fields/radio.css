@@ -1,0 +1,62 @@
+/* Espaço entre o título (label) e o grupo de radio buttons */
+label + .radio-wrapper {
+  margin-top: 1rem;
+}
+
+/* Define o layout em grid para que os botões fiquem lado a lado quando houver espaço */
+.radio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); /* Corrigido: minmax sem espaço */
+  gap: 1rem; /* Espaçamento entre os cards */
+}
+
+/* Estilo do card (opção de turno) */
+.radio-inner {
+  border: 1px solid var(--stroke-default);
+  border-radius: .5rem;
+  display: grid;
+  justify-items: center; /* Centraliza o ícone e o texto */
+  gap: .5rem;
+  padding: 2rem .5rem .5rem;
+  position: relative; /* Necessário para posicionar .radio-image corretamente */
+
+  /* Esconde completamente o radio input visualmente */
+  & input,
+  & input:focus,
+  & input:hover {
+    all: unset;
+    position: absolute; /* Corrigido: estava escrito 'absolut' */
+    inset: 0; /* Faz o input ocupar toda a área clicável */
+    cursor: pointer; /* Melhor usabilidade */
+    z-index: 2; /* Coloca o input acima dos outros elementos, se necessário */
+  }
+
+  /* Ícone da "bolinha" de seleção personalizada */
+  .radio-image {
+    background-image: url(/assets/icons/radio-default.svg);
+    background-size: cover; /* Garante que a imagem ocupe toda a área */
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute; /* Corrigido: estava escrito 'absolut' */
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 1; /* Atrás do input invisível */
+  }
+
+  /* Estilo visual ao passar o mouse ou ao focar */
+  &:hover,
+  &:focus-within {
+    border: 1px solid var(--stroke-highlight);
+
+    & .radio-image {
+      background-image: url(/assets/icons/radio-hover.svg);
+    }
+  }
+  &:has(:checked) {
+    border: 2px solid var(--stroke-highlight);
+
+    & .radio-image {
+      background-image: url(/assets/icons/radio-checked.svg);
+    }
+  }
+}
