@@ -1,21 +1,7 @@
-/* id="app" que esta no ínico do body 
-======================================
-O que é e o que faz:
-
-    - display: grid;
-      Define que o elemento #app será um "container de grid".
-      Isso significa que seus elementos filhos passarão a ser organizados em uma grade (grid),
-      permitindo criar layouts mais controlados e complexos de forma simples.
-
-    - grid-template-columns: 51.25% 48.75%;
-      Especifica como as colunas dentro do grid serão distribuídas.
-      Nesse caso, o grid terá duas colunas:
-      -> A primeira coluna ocupará 51.25% da largura do container.
-      -> A segunda coluna ocupará 48.75% */
 #app {
   display:grid;
   grid-template-columns: 51.25% 48.75%;
-/* 100vh: 100% da altura da janela de visualização (viewport height) */
+
   height: 100vh;
   overflow: hidden;
 }
@@ -23,7 +9,7 @@ O que é e o que faz:
 main {
   overflow: auto;
   padding: 4rem;
-  height: 100vh; /* IMPORTANTE: Faz o main ter altura cheia para rolar internamente */
+  height: 100vh; 
 
   & .main-container {
     max-width: 33rem;
@@ -31,12 +17,10 @@ main {
   }
 
   & .back {
-    /*  Seleciona o elemento com a classe "back" que está dentro de "main" 
-    e aplica o display: flex, transformando-o em um container flexível,
-    permitindo organizar os filhos em linha ou coluna com mais controle. */
+
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 5rem;
     margin-bottom: 1.5rem;
   }
 

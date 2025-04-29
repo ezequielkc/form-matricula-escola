@@ -1,5 +1,5 @@
 .dropzone {
-  position: relative; /* ⬅ Necessário para restringir o input */
+  position: relative; 
 
   border: 1px dashed var(--stroke-default);
   border-radius: .25rem;
@@ -21,7 +21,7 @@
   }
 
   & p {
-    color: var(--text-tertiary); /* Use apenas um seletor p */
+    color: var(--text-tertiary);
   }
 
   &:hover, &:has(input:focus) {
