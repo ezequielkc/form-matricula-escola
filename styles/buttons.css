@@ -20,11 +20,7 @@ button {
     color: var(--text-highlight);
     background-color: transparent;
     border: 1px solid var(--text-highlight);
-  }
-
-  &.btn-secondary {
     margin-left: auto;
-    border: 1px solid (--text-highlight);
 
     &:hover,
     &:focus {
