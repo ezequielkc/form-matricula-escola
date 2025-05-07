@@ -13,9 +13,12 @@
 
 </head>
 <body>
+    <!-- Container principal que organiza a página usando Grid no desktop e Flex no mobile -->
   <div id="app">
+    <!-- Seção principal onde fica o formulário. Ocupa a primeira coluna no desktop -->
     <main>
       <div class="main-container">
+          <!-- Componente de navegação para voltar, escondido no mobile -->
         <div class="back">
           <img src="assets/icons/arrow-left-02.svg" alt="Ícone de voltar">
           <span>Voltar</span>
@@ -24,7 +27,9 @@
         <h1>Formulário de matrícula</h1>
         <p>Preencha os dados abaixo para matricular seu filho na escola de educação infantil Estrelas do Amanhã.</p>
 
-        <form action="where" method="post" enctype="multipart/form-data">
+        <!-- Início do formulário. Agrupado por fieldsets para organização semântica -->
+        <form action="#" method="get" enctype="multipart/form-data">
+          <!-- Fieldset com dados básicos da criança -->
           <fieldset class="child-info">
             <legend>Informações da Criança</legend>
 
@@ -84,6 +89,7 @@
             </div>
           </fieldset>
 
+          <!-- Fieldset com endereço. Usa Flexbox para alinhar rua/número e cidade/estado -->
           <fieldset class="adress">
             <legend>Endereço residencial</legend>
 
@@ -120,6 +126,7 @@
 
           </fieldset>
 
+          <!-- Fieldset com dados do responsável legal -->
           <fieldset class="gardian">
             <legend>Informações do responsável</legend>
 
@@ -146,6 +153,7 @@
             </div>
           </fieldset>
 
+          <!-- Fieldset com opções de turno e esportes. Usando componentes de radio personalizados -->
           <fieldset class="enroll-option">
             <legend>Opções de matrícula</legend>
 
@@ -225,6 +233,7 @@
             </div>
           </fieldset>
 
+          <!-- Componente visual com checkbox customizado para os termos de aceite -->
           <div class="terms-wrapper">
             <div class="checkbox-wrapper">
               <div class="checkbox-image"></div>
@@ -236,6 +245,7 @@
             </label>
           </div>
 
+          <!-- Área com botões de ação. No mobile são empilhados, no desktop lado a lado -->
           <div class="actions-wrapper">
             <button class="btn-secondary" type="button">
               Salvar respostas
@@ -250,6 +260,7 @@
       </div>
     </main>
 
+    <!-- Seção lateral com conteúdo institucional. Ocupa a segunda coluna no desktop -->
     <aside>
       <div class="aside-container">
         <header>

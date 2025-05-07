@@ -1,31 +1,46 @@
+/* Reset total no botão para remover estilos padrões do navegador */
 button {
   all: unset;
+
+  /* Peso da fonte para dar leve destaque visual */
   font-weight: 500;
+
+  /* Cor do texto herdando a cor de destaque do tema */
   color: var(--text-highlight);
+
+  /* Espaçamento interno que aumenta a área clicável do botão */
   padding: .75rem 1.5rem;
+
+  /* Bordas arredondadas para visual mais suave */
   border-radius: .5rem;
+
+  /* Cursor muda para "mão" ao passar o mouse, indicando interatividade */
   cursor: pointer;
 
+  /* Estilos para o botão primário (ex: ação principal como "Enviar") */
   &.btn-primary {
-    color: white;
-    background-color: #E43A12;
+    color: white; /* Texto branco */
+    background-color: #E43A12; /* Cor forte de fundo */
 
+    /* Mudança visual ao passar o mouse ou ao focar via teclado */
     &:hover,
     &:focus {
-      background-color: #F3541C;
+      background-color: #F3541C; /* Tom mais claro de destaque */
     }
   }
 
+  /* Estilos para o botão secundário "enviar"*/
   &.btn-secondary {
-    color: var(--text-highlight);
-    background-color: transparent;
-    border: 1px solid var(--text-highlight);
-    margin-left: auto;
+    color: var(--text-highlight); /* Cor de destaque no texto */
+    background-color: transparent; /* Sem fundo, estilo mais leve */
+    border: 1px solid var(--text-highlight); /* Contorno visível */
+    margin: 0;
 
+    /* Efeitos de hover e foco com realce visual e contorno suave */
     &:hover,
     &:focus {
-      color: #E43A12;
-      outline: .25rem solid var(--surface-secondary);
+      color: #E43A12; /* Cor mais forte no hover */
+      outline: .25rem solid var(--surface-secondary); /* Destaque ao redor do botão */
     }
   }
 }

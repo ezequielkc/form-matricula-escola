@@ -1,35 +1,41 @@
+/* Estilos básicos para todos os campos de entrada */
 input, textarea, select {
-  appearance: none;
-  width: 100%;
-  border-radius: .5rem;
-  border: 1px solid var(--stroke-default);
-  padding: .75rem 1rem;
-  font: var(--text);
+  appearance: none; /* Remove a aparência nativa dos navegadores (como setas em select) */
+  width: 100%; /* Campos ocupam toda a largura disponível */
+  border-radius: .5rem; /* Bordas arredondadas */
+  border: 1px solid var(--stroke-default); /* Cor de borda padrão */
+  padding: .75rem 1rem; /* Espaçamento interno confortável */
+  font: var(--text); /* Fonte herdando da variável global */
 }
 
+/* Estilo geral para todos os labels */
 label {
-  font: var(--text-sm); 
-  color: var(--text-secondary);
-  display: block;
-  margin-bottom: .25rem;
+  font: var(--text-sm); /* Fonte menor para identificação do campo */
+  color: var(--text-secondary); /* Cor de texto mais neutra */
+  display: block; /* Força o label a ocupar uma linha inteira */
+  margin-bottom: .25rem; /* Espaço entre o label e o campo */
 }
 
+/* Destaque visual ao focar em inputs */
 input:focus,
 select:focus, 
 textarea:focus,
 input[type="date"]:focus-within {
-  outline: .25rem solid var(--surface-secondary);
-  border: .125rem solid var(--stroke-highlight);
-  outline-offset: .1px;
+  outline: .25rem solid var(--surface-secondary); /* Realce ao redor do campo */
+  border: .125rem solid var(--stroke-highlight); /* Borda em cor de destaque */
+  outline-offset: .1px; /* Evita que a borda e o outline se sobreponham */
 }
 
+/* Estilo específico para campos do tipo data */
 input[type="date"] {
-  position: relative;
+  position: relative; /* Necessário para posicionar o ícone de calendário */
 
+  /* Oculta o ícone padrão do seletor de data */
   &::-webkit-calendar-picker-indicator {
     opacity: 0;
   }
 
+  /* Insere um ícone personalizado de calendário */
   &::before {
     content: "";
     position: absolute;
@@ -42,29 +48,36 @@ input[type="date"] {
   }
 }
 
+/* Ícone customizado de seta no select */
 select {
   background: url(/assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
 }
 
+/* Ajusta o espaçamento entre rua/número e cidade/estado */
 .adress .flex {
   gap: 1.25rem;
 }
 
+/* Reduz a opacidade de campos desabilitados para indicar inatividade */
 .input-wrapper:has([disabled]) {
   opacity: .5;
 }
 
+/* Comportamentos específicos para o input */
 input {
+  /* Estilo de inputs desabilitados */
   &[disabled] {
-    background-color: var(--surface-disabled);
-    border: 1px solid var(--stroke-default);
-    color: var(--text-primary); 
+    background-color: var(--surface-disabled); /* Cor de fundo cinza claro */
+    border: 1px solid var(--stroke-default); /* Borda padrão */
+    color: var(--text-primary); /* Texto ainda visível */
   }
 
+  /* Estilo quando o campo está inválido (ex: e-mail mal formatado) */
   &:invalid {
-    border: 0.125rem solid var(--semantic-error);
+    border: 0.125rem solid var(--semantic-error); /* Borda vermelha */
   }
 
+  /* Estilo para texto de apoio abaixo do campo */
   & + small {
     font: var(--text-sm);
     color: #78716c;
@@ -72,6 +85,7 @@ input {
     margin-top: .25rem;
   }
 
+  /* Mostra erro de validação apenas quando o campo é required e inválido */
   &:required + .error {
     display: flex;
     align-items: center;
@@ -81,7 +95,8 @@ input {
     margin-top: .25rem;
   }
 
-  &:not(:focus):valid + .error{
+  /* Esconde o erro se o campo já está válido e não está em foco */
+  &:not(:focus):valid + .error {
     display: none;
   }
 }

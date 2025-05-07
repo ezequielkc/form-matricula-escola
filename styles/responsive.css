@@ -1,0 +1,99 @@
+/* Layout mobile-first*/
+#app {
+  display: flex; /* Usa flexbox para empilhar as seções verticalmente */
+  flex-direction: column-reverse; /* Inverte a ordem: aside aparece acima de main */
+  height: auto;
+  overflow: visible;
+
+  align-items: center; /* Centraliza os filhos (main e aside) horizontalmente */
+}
+
+/* Permite que o body role normalmente no mobile */
+body {
+  overflow: auto;
+}
+
+/* Área principal do formulário em telas pequenas */
+main {
+  overflow: visible; /* Permite expansão conforme o conteúdo */
+  height: auto;
+  padding: 2rem 1rem; /* Espaçamento interno adaptado para mobile */
+}
+
+/* Área lateral (aside) no mobile, com padding menor */
+aside {
+  padding: 2rem 1rem;
+}
+
+/* Oculta o botão de voltar no mobile */
+.back {
+  display: none !important;
+}
+
+/* Flexbox em coluna para empilhar campos */
+.flex {
+  flex-direction: column;
+}
+
+/* Centraliza o texto da seção de termos de uso no mobile */
+.terms-wrapper {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Empilha os botões verticalmente e centraliza no mobile */
+.actions-wrapper {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* Layout desktop a partir de 1024px*/
+@media (min-width: 1024px) {
+  #app {
+    display: grid; /* Troca o layout para Grid no desktop */
+    grid-template-columns: 51.25% 48.75%; /* Coluna principal e lateral */
+    height: 100vh;
+    overflow: hidden; /* Impede rolagem da página toda */
+  }
+
+  body {
+    overflow: hidden;
+  }
+
+  main {
+    padding: 4rem; /* Mais espaçamento em telas grandes */
+    overflow: auto;
+    height: 100vh; /* Ocupa altura total da tela */
+  }
+
+  aside {
+    padding: 4rem;
+  }
+
+  /* Mostra o botão de voltar no desktop */
+  .back {
+    display: flex !important;
+  }
+
+  /* Campos lado a lado com flex-direction: row */
+  .flex {
+    flex-direction: row;
+  }
+
+  /* Alinha texto à esquerda na seção de termos */
+  .terms-wrapper {
+    text-align: left;
+    padding: 0;
+  }
+
+  /* Botões lado a lado com espaçamento centralizado */
+  .actions-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 1rem;
+  }
+}

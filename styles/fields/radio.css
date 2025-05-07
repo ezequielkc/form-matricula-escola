@@ -1,59 +1,65 @@
+/* Espaço entre o label (como "Escolha o turno") e o grupo de botões de rádio */
 label + .radio-wrapper {
   margin-top: 1rem;
 }
 
+/* Container dos botões de rádio */
 .radio-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
-  gap: 1rem; 
+  display: grid; /* Organiza os botões em grid */
+  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr)); 
+  /* Cria colunas responsivas, cada botão com no mínimo 7.5rem de largura */
+  gap: 1rem; /* Espaço entre os botões */
 }
 
+/* Estilo de cada botão de rádio como um "cartão clicável" */
 .radio-inner {
-  border: 1px solid var(--stroke-default);
-  border-radius: .5rem;
+  border: 1px solid var(--stroke-default); /* Borda padrão */
+  border-radius: .5rem; /* Bordas arredondadas */
   display: grid;
-  justify-items: center; 
-  gap: .5rem;
-  padding: 2rem .5rem .5rem;
-  position: relative; 
+  justify-items: center; /* Centraliza os itens no centro horizontal */
+  gap: .5rem; /* Espaço entre ícone e label */
+  padding: 2rem .5rem .5rem; /* Espaço extra no topo para o ícone */
+  position: relative; /* Necessário para posicionar os filhos absolutos */
 
-  
+  /* Input real de rádio — invisível e cobrindo toda a área clicável */
   & input,
   & input:focus,
   & input:hover {
-    all: unset;
-    position: absolute; 
-    inset: 0; 
-    cursor: pointer; 
-    z-index: 2; 
+    all: unset; /* Remove estilos padrão */
+    position: absolute;
+    inset: 0; /* Ocupa toda a área do botão */
+    cursor: pointer;
+    z-index: 2; /* Fica acima dos outros elementos, tornando-se clicável */
   }
 
-
+  /* Ícone visual do rádio (ex: bolinha) que representa o estado */
   .radio-image {
-    background-image: url(/assets/icons/radio-default.svg);
+    background-image: url(/assets/icons/radio-default.svg); /* Estado padrão */
     background-size: cover;
     width: 1.5rem;
     height: 1.5rem;
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
-    z-index: 1; 
+    z-index: 1; /* Fica atrás do input */
   }
 
-
+  /* Estilo ao passar o mouse ou focar com teclado */
   &:hover,
   &:focus-within {
-    border: 1px solid var(--stroke-highlight);
+    border: 1px solid var(--stroke-highlight); /* Realce da borda */
 
     & .radio-image {
-      background-image: url(/assets/icons/radio-hover.svg);
+      background-image: url(/assets/icons/radio-hover.svg); /* Ícone de hover */
     }
   }
+
+  /* Estilo quando o botão estiver selecionado (checked) */
   &:has(:checked) {
-    border: 2px solid var(--stroke-highlight);
+    border: 2px solid var(--stroke-highlight); /* Borda mais forte */
 
     & .radio-image {
-      background-image: url(/assets/icons/radio-checked.svg);
+      background-image: url(/assets/icons/radio-checked.svg); /* Ícone marcado */
     }
   }
 }

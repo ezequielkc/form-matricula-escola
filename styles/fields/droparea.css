@@ -1,36 +1,46 @@
-.dropzone {
-  position: relative; 
+/*Componente Dropzone área de upload de arquivo */
 
-  border: 1px dashed var(--stroke-default);
-  border-radius: .25rem;
-
-  display: grid;
-  justify-items: center;
-  gap: .5rem;
-
-  text-align: center;
-  padding: 1.75rem 1rem;
-
-  & input {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
+   .dropzone {
+    position: relative; /* Necessário para posicionar o input de forma absoluta sobre toda a área */
+  
+    /* Borda tracejada para indicar área de drop */
+    border: 1px dashed var(--stroke-default);
+    border-radius: .25rem; /* Bordas levemente arredondadas */
+  
+    /* Layout em grid para centralizar conteúdo */
+    display: grid;
+    justify-items: center; /* Centraliza horizontalmente cada item */
+    gap: .5rem; /* Espaço entre elementos internos */
+  
+    text-align: center; /* Centraliza o texto dentro da área */
+    padding: 1.75rem 1rem; /* Espaço interno generoso */
+  
+    /* Input do tipo file: ocupa toda a área, fica invisível mas clicável */
+    & input {
+      position: absolute; /* Cobre toda a dropzone */
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      opacity: 0; /* Invisível */
+      cursor: pointer; /* Cursor de clique */
+    }
+  
+    /* Estilização do parágrafo de instrução */
+    & p {
+      color: var(--text-tertiary); /* Cor mais suave para instrução */
+    }
+  
+    /* Efeito visual ao passar o mouse ou focar com teclado */
+    &:hover,
+    &:has(input:focus) {
+      border-width: 2px; /* Destaca mais a borda */
+      border-color: var(--stroke-highlight); /* Cor mais vibrante */
+      background-color: var(--surface-secondary); /* Realce no fundo */
+    }
+  
+    /* Estilização do ícone SVG*/
+    & svg path {
+      stroke: var(--text-highlight); 
+    } 
   }
-
-  & p {
-    color: var(--text-tertiary);
-  }
-
-  &:hover, &:has(input:focus) {
-    border-width: 2px;
-    border-color: var(--stroke-highlight);
-    background-color: var(--surface-secondary);
-  }
-
-  & svg path {
-    stroke: (--text-highlight);
-  } 
-}
+  

@@ -1,27 +1,40 @@
+/* Importa estilos adicionais para os campos do formulário */
 @import url(fields/index.css);
+
+/* Estilo geral do formulário - espaçamento superior para separar o topo */
 form {
   margin-top: 3rem;
 }
 
+
+/* Cada agrupamento de campos é um fieldset, aqui sem borda e organizado com Grid */
 fieldset {
   border: none;
 
   display: grid;
+  /* Espaçamento entre os elementos internos do fieldset */
   gap: 1.5rem;
 }
 
+
+/* Título do fieldset com peso e tamanho definidos para hierarquia visual */
 legend {
   font: 600 1rem/1.25 var(--font-family);
   margin-bottom: 1.5rem;
 }
 
+
+/* Cada agrupamento de campos é um fieldset, aqui sem borda e organizado com Grid */
 fieldset + fieldset {
   margin-top: 3rem;
 }
 
+
+/* Área dos botões de ação do formulário, com Flexbox para centralizar e espaçar */
 .actions-wrapper {
   margin-top: 3rem;
   display: flex;
+  /* Espaçamento entre os elementos internos do fieldset */
   gap: 1rem;
   justify-content: center;
 }

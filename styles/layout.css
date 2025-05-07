@@ -1,51 +1,71 @@
+/* Container principal da aplicação: usa Grid para dividir a tela em duas colunas fixas */
 #app {
-  display:grid;
+  display: grid;
+  /* Primeira coluna (main), segunda (aside) */
   grid-template-columns: 51.25% 48.75%;
 
-  height: 100vh;
+  /* Altura mínima da tela, mas permite crescer conforme o conteúdo */
+  min-height: 100vh;
   overflow: hidden;
 }
 
-main {
-  overflow: auto;
-  padding: 4rem;
-  height: 100vh; 
 
+/* Estilos da área principal do formulário */
+main {
+  /* Espaçamento interno uniforme em todos os lados */
+  padding: 25px;
+
+  /* Permite que o conteúdo cresça naturalmente e seja rolável */
+  overflow: auto;
+  height: auto;
+
+  /* Garante que o padding esteja dentro do limite da caixa */
+  box-sizing: border-box;
+
+  /* Container interno com largura máxima e alinhamento à direita */
   & .main-container {
     max-width: 33rem;
     margin-left: auto;
   }
 
+  /* Componente visual com botão de voltar, usando Flexbox para ícone e texto */
   & .back {
-
     display: flex;
     align-items: center;
     gap: 5rem;
     margin-bottom: 1.5rem;
   }
 
+  /* Título principal */
   & .h1 {
     font: 600 1.5rem/1.25 var(--font-family);
-    margin-top: 5.rem;
+    margin-top: 5.rem; /* Obs: esse valor parece conter um erro de digitação (5.rem) */
   }
 }
 
+
+/* Área lateral (aside) com fundo personalizado e padding */
 aside {
   background-color: var(--surface-secondary);
-  padding: 4rem;
+  padding: 25px;
 
+  /* Container do conteúdo lateral com largura máxima */
   & .aside-container {
     max-width: 31rem;
+
+    /* Espaçamento superior para a imagem dentro do container */
     & > img {
       margin-top: 2rem;
     }
   }
 
+  /* Título principal da seção lateral com destaque em <span> */
   & .h2 {
     font: 600 2.5rem/1.25 var(--font-family);
     margin-bottom: .5rem;
+
     & span {
-      color: var(--text-highlight)
+      color: var(--text-highlight);
     }
   }
 }

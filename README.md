@@ -11,9 +11,10 @@ Permitir que os responsáveis preencham os dados da criança e finalizem a matr�
 - HTML semântico;
 - CSS moderno (com variáveis, grid e flexbox);
 - CSS modularizado (cada parte do layout ou componente em um arquivo separado);
-- Ícones em SVG para personalização dos campos (checkbox, radio, etc.).
+- Ícones em SVG para personalização dos campos (checkbox, radio, etc....);
+- Responsividade mobile-first com ajustes para desktop.
 
-## O que o formulário tem
+## O que o formulário temww
 
 - Dados da criança: nome, nascimento, sexo e observações médicas;
 - Upload de certidão de nascimento;
@@ -23,25 +24,12 @@ Permitir que os responsáveis preencham os dados da criança e finalizem a matr�
 - Confirmação de leitura dos termos;
 - Botões de ação: salvar e enviar matrícula.
 
+## Responsividade
 
-## Estrutura do projeto
+A interface foi construída com abordagem **mobile-first**, utilizando `flex-direction: column-reverse` para exibir o conteúdo institucional acima do formulário em telas pequenas. Para telas maiores (acima de 1024px):
 
-projeto/
-├── index.html
-├── styles/
-│   ├── main.css
-│   ├── global.css
-│   ├── layout.css
-│   ├── forms.css
-│   ├── input.css
-│   ├── droparea.css
-│   ├── radio.css
-│   ├── checkbox.css
-│   └── buttons.css
-├── assets/
-│   ├── icons/
-│   ├── logo.svg
-│   └── illustration.svg
+- O layout muda para **CSS Grid**, dividindo a tela em duas colunas (formulário e lateral);
+- Utiliza-se **padding fixo de 25px** em `main` e `aside` para garantir respiro visual mesmo com zoom ativado;
+- Foi evitado o uso de `height: 100vh` em `main` para prevenir cortes visuais, especialmente em notebooks e resoluções menores.
 
-
-Se você tiver qualquer sugestão ou dica, vou ficar muito feliz em aprender mais! 
+Se você tiver qualquer sugestão ou dica, vou ficar muito feliz em aprender mais!
